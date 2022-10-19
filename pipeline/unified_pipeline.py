@@ -834,7 +834,7 @@ class UnifiedPipeline(DynamicModuleDiffusionPipeline):
             has_nsfw_concept = [False] * numpyImage.shape[0]
 
         if output_type == "pil":
-            image = self.numpy_to_pil(image)
+            image = self.numpy_to_pil(numpyImage)
         elif output_type == "tensor":
             image = torch.from_numpy(numpyImage).permute(0, 3, 1, 2)
         else:
